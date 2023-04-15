@@ -1,0 +1,20 @@
+server:
+  error:
+    include-message: always
+
+spring:
+  main:
+    banner-mode: off
+  devtools:
+    add-properties: false
+  application:
+    name: sccon-rh
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health
+
+logging:
+  level:
+    root: info
