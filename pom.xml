@@ -16,7 +16,7 @@
     <properties>
         <java.version>11</java.version>
         <lombok.version>1.18.26</lombok.version>
-        <mapstruct.version>1.5.2.Final</mapstruct.version>
+        <mapstruct.version>1.5.4.Final</mapstruct.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
@@ -203,11 +203,11 @@
                 <version>0.8.9</version>
                 <configuration>
                     <excludes>
-                        <exclude>**/configuration/*.**</exclude>
+                        <exclude>**/config/*.**</exclude>
                         <exclude>**/domain/*.**</exclude>
-                        <exclude>**/domain/dto/**/*.**</exclude>
-                        <exclude>**/domain/enums/**/*.**</exclude>
-                        <exclude>**/database/*.**</exclude>
+                        <exclude>**/dto/*.**</exclude>
+                        <exclude>**/enums/*.**</exclude>
+                        <exclude>**/exception/*.**</exclude>
                         <exclude>**/*Application.*</exclude>
                     </excludes>
                 </configuration>
