@@ -1,4 +1,4 @@
-package br.com.sccon.rh.repository;
+package br.com.sccon.rh.service;
 
 import br.com.sccon.rh.domain.Person;
 import br.com.sccon.rh.dto.PersonMapperImpl;
@@ -6,7 +6,6 @@ import br.com.sccon.rh.enums.AgeOutputEnum;
 import br.com.sccon.rh.enums.SalaryOutputEnum;
 import br.com.sccon.rh.exception.ConflictException;
 import br.com.sccon.rh.exception.NotFoundException;
-import br.com.sccon.rh.service.PersonService;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
