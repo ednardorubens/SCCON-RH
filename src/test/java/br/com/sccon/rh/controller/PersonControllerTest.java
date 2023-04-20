@@ -124,8 +124,11 @@ public class PersonControllerTest {
     @Test
     @Order(60)
     public void testUpdate() throws Exception {
-        Person person = new Person();
-        person.setName("Robson Carvalho de Almeida");
+        Person person = new Person(
+            "Robson Carvalho de Almeida",
+            LocalDate.of(1996, 2, 11),
+            LocalDate.of(2020, 10, 5)
+        );
 
         MockHttpServletRequestBuilder request = put(PersonController.PATH + "/4")
             .contentType(MediaType.APPLICATION_JSON_VALUE)
@@ -139,6 +142,7 @@ public class PersonControllerTest {
             .andExpect(jsonPath("$.dateOfBirth").value("1996-02-11"))
             .andExpect(jsonPath("$.dateOfAdmission").value("2020-10-05"));
 
+        person = new Person();
         person.setName("Robson Carvalho Vasconcelos");
 
         request = patch(PersonController.PATH + "/4")
@@ -157,8 +161,11 @@ public class PersonControllerTest {
     @Test
     @Order(70)
     public void testUpdateNotFound() throws Exception {
-        Person person = new Person();
-        person.setName("Robson Carvalho de Almeida");
+        Person person = new Person(
+            "Robson Carvalho de Almeida",
+            LocalDate.of(1996, 2, 11),
+            LocalDate.of(2020, 10, 5)
+        );
 
         MockHttpServletRequestBuilder request = put(PersonController.PATH + "/10")
             .contentType(MediaType.APPLICATION_JSON_VALUE)
@@ -166,6 +173,9 @@ public class PersonControllerTest {
 
         mockMvc.perform(request)
             .andExpect(status().isNotFound());
+
+        person = new Person();
+        person.setName("Robson Carvalho Vasconcelos");
 
         request = patch(PersonController.PATH + "/10")
             .contentType(MediaType.APPLICATION_JSON_VALUE)
